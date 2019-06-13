@@ -3,7 +3,7 @@ An async generic resource store for redux
 
 This is a resource store implementation for handling redux state shape for async resources. The async resources can be fetched from http or websocket or even just promises. It contains only the reducer, action implementation. It doesn't have any saga, thunk library. This library is going to stay generic.
 
-It's a remake of [this](https://github.com/oplog/resource-redux) library but without the saga stuff and with the use of `typesafe-actions` library.
+It's a remake of [this](https://github.com/oplog/resource-redux) library but without the saga stuff and contains improvements with the use of `typesafe-actions` library.
 
 **Notice:** This package doesn't have functionality to perform request but it handles the state shape changes of async resources 
 
