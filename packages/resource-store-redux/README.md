@@ -67,10 +67,11 @@ To dispatch actions in your container definition;
 ```ts
 import { resourceActions } from 'resource-store-redux'
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => ({
 
+  onStuffHappens: {
     // request starts
-    dispatch(resourceActions.request(ResourceKeys.CreateUser, requestParams))
+    dispatch(resourceActions.request(ResourceKeys.CreateUser, requestParams)),
 
     // request ended with 20x
     dispatch(resourceActions.success(ResourceKeys.CreateUser, data))
@@ -82,7 +83,8 @@ const mapDispatchToProps = dispatch => {
     dispatch(resourceActions.cancel(ResourceKeys.CreateUser, error))
 
     // Notice: These actions doesn't make any request but just handles the redux state of requests
-}
+  }
+})
 ```
 
 There are also builtin selectors for resources;
