@@ -10,5 +10,5 @@ export interface ResourceStoreState {
 }
 
 export interface ResourceStoreOptions {
-  api: { [key: string]: () => Promise<any> };
+  keys: string[]
 }
