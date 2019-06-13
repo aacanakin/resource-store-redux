@@ -105,3 +105,8 @@ const error = getError(state, ResourceKeys.CreateUser)
 const hasResourceError = hasError(state, ResourceKeys.CreateUser)
 // returns if the resource key has error
 ```
+
+#### Roadmap
+- [ ] Get rid of tslint, integrate eslint
+- [ ] Convert webpack configs to ts
+A
