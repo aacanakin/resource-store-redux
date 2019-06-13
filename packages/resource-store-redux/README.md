@@ -110,3 +110,4 @@ const hasResourceError = hasError(state, ResourceKeys.CreateUser)
 - [ ] Get rid of tslint, integrate eslint
 - [ ] Convert webpack configs to ts
 - [ ] CircleCI integration for build, test and coverage
+- [ ] Publish package to npm
