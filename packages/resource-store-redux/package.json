@@ -1,0 +1,59 @@
+{
+  "name": "resource-store-redux",
+  "version": "0.1.0",
+  "description": "Resource store for async resources",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js --progress",
+    "build:dev": "webpack --config webpack.dev.js --progress",
+    "watch": "webpack --config webpack.dev.js --progress --watch",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "prepublish": "test",
+    "analyze": "source-map-explorer dist/resource-redux*"
+  },
+  "author": "Aras Can Akin",
+  "license": "MIT",
+  "dependencies": {
+    "redux": "^4.0.1",
+    "typesafe-actions": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "clean-webpack-plugin": "^1.0.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0",
+    "source-map-explorer": "^1.6.0",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.12.0",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx)?$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
+  },
+  "peerDependencies": {
+    "redux": "^4.0.1"
+  }
+}
