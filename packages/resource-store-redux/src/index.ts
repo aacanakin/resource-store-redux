@@ -10,6 +10,6 @@ export * from "./types";
 
 export function resourceStore(options: ResourceStoreOptions) {
   return {
-    reducer: reducer(Object.keys(options.api)),
+    reducer: reducer(options.keys),
   };
 }
