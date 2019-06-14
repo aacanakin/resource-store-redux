@@ -10,7 +10,6 @@
     "watch": "webpack --config webpack.dev.ts --progress --watch",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "prepublish": "test",
     "analyze": "source-map-explorer dist/resource-redux*"
   },
   "author": "Aras Can Akin",
