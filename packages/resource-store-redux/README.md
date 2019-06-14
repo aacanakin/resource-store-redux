@@ -69,7 +69,7 @@ import { resourceActions } from 'resource-store-redux'
 
 const mapDispatchToProps = dispatch => ({
 
-  onStuffHappens: {
+  onStuffHappens: () => {
     // request starts
     dispatch(resourceActions.request(ResourceKeys.CreateUser, requestParams)),
 
@@ -87,7 +87,7 @@ const mapDispatchToProps = dispatch => ({
 })
 ```
 
-There are also builtin selectors for resources;
+There are also builtin selectors for resources for mapping your state to props;
 
 ```ts
 import { getResource, getData, isBusy, getError, hasError } from 'resource-store-redux'
