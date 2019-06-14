@@ -14,6 +14,13 @@
   },
   "author": "Aras Can Akin",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aacanakin/resource-store-redux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aacanakin/resource-store-redux/issues"
+  },
   "dependencies": {
     "redux": "^4.0.1",
     "typesafe-actions": "^3.0.0"
