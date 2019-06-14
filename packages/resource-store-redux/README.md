@@ -1,5 +1,7 @@
 ### resource-store-redux
-An async generic resource store for redux 
+[![Build Status](https://travis-ci.org/aacanakin/resource-store-redux.svg?branch=master)](https://travis-ci.org/aacanakin/resource-store-redux)
+
+An async generic resource store for redux
 
 This is a resource store implementation for handling redux state shape for async resources. The async resources can be fetched from http or websocket or even just promises. It contains only the reducer, action implementation. It doesn't have any saga, thunk library. This library is going to stay generic.
 
