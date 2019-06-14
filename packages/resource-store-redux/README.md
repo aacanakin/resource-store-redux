@@ -1,5 +1,5 @@
 ### resource-store-redux
-[![Build Status](https://travis-ci.org/aacanakin/resource-store-redux.svg?branch=master)](https://travis-ci.org/aacanakin/resource-store-redux)
+[![Build Status](https://travis-ci.org/aacanakin/resource-store-redux.svg?branch=master)](https://travis-ci.org/aacanakin/resource-store-redux) [![Test Coverage](https://api.codeclimate.com/v1/badges/50ceb23e52dda93a7b60/test_coverage)](https://codeclimate.com/github/aacanakin/resource-store-redux/test_coverage)
 
 An async generic resource store for redux
 
