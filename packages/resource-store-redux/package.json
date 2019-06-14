@@ -5,9 +5,9 @@
   "main": "src/index.ts",
   "module": "src/index.ts",
   "scripts": {
-    "build": "webpack --config webpack.prod.js --progress",
-    "build:dev": "webpack --config webpack.dev.js --progress",
-    "watch": "webpack --config webpack.dev.js --progress --watch",
+    "build": "webpack --config webpack.prod.ts --progress",
+    "build:dev": "webpack --config webpack.dev.ts --progress",
+    "watch": "webpack --config webpack.dev.ts --progress --watch",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "prepublish": "test",
@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.12",
+    "@types/node": "^12.0.8",
+    "@types/webpack-merge": "^4.1.5",
     "clean-webpack-plugin": "^1.0.0",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -29,6 +31,7 @@
     "source-map-explorer": "^1.6.0",
     "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.3",
+    "ts-node": "^8.2.0",
     "tslint": "^5.12.0",
     "tslint-loader": "^3.5.4",
     "typescript": "^3.2.2",
@@ -51,7 +54,23 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/dist/"
-    ]
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts}",
+      "!**/node_modules/**",
+      "!**/dist/**",
+      "!**/coverage/**",
+      "!**/webpack.*.ts",
+      "!**/*.eslintrc.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "peerDependencies": {
     "redux": "^4.0.1"
