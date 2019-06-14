@@ -112,4 +112,3 @@ const hasResourceError = hasError(state, ResourceKeys.CreateUser)
 
 #### Roadmap
 - [ ] Get rid of tslint, integrate eslint
-- [ ] CircleCI integration for build, test and coverage
