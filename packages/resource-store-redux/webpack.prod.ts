@@ -1,4 +1,5 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+export {};
+
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 
