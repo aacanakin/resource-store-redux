@@ -2,8 +2,8 @@
   "name": "resource-store-redux",
   "version": "0.1.2",
   "description": "Resource store for async resources",
-  "main": "src/index.ts",
-  "module": "src/index.ts",
+  "main": "dist/main",
+  "types": "dist/index",
   "scripts": {
     "build": "webpack --config webpack.prod.ts --progress",
     "build:dev": "webpack --config webpack.dev.ts --progress",
