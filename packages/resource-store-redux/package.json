@@ -1,6 +1,6 @@
 {
   "name": "resource-store-redux",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Resource store for async resources",
   "main": "src/index.ts",
   "module": "src/index.ts",
