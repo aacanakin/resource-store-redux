@@ -6,6 +6,6 @@ export function initialState(keys: string[]): ResourceStoreState {
     state[key] = {
       isBusy: false,
     };
-  })
+  });
   return state;
 }
