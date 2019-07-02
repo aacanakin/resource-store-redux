@@ -30,8 +30,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'resource-redux.js',
-    library: 'resource-redux',
+    filename: 'index.js',
+    library: 'resource-store-redux',
     libraryTarget: 'umd',
   },
   plugins: [
