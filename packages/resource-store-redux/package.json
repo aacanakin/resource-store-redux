@@ -22,8 +22,10 @@
     "url": "https://github.com/aacanakin/resource-store-redux/issues"
   },
   "dependencies": {
-    "redux": "^4.0.1",
     "typesafe-actions": "^3.0.0"
+  },
+  "peerDependencies": {
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@types/jest": "^23.3.12",
@@ -35,6 +37,7 @@
     "eslint-plugin-import": "^2.14.0",
     "jest": "^23.6.0",
     "source-map-explorer": "^1.6.0",
+    "redux": "^4.0.1",
     "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.2.0",
