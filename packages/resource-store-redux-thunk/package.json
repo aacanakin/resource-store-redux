@@ -1,0 +1,87 @@
+{
+  "name": "resource-store-redux-thunk",
+  "version": "0.1.0",
+  "description": "Thunk middleware for resource-store-redux to map actions with async resources",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "scripts": {
+    "build": "webpack --config webpack.prod.ts --progress",
+    "build:dev": "webpack --config webpack.dev.ts --progress",
+    "watch": "webpack --config webpack.dev.ts --progress --watch",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "analyze": "source-map-explorer dist/resource-redux*"
+  },
+  "author": "Aras Can Akin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aacanakin/resource-store-redux-thunk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aacanakin/resource-store-redux-thunk/issues"
+  },
+  "homepage": "https://github.com/aacanakin/resource-store-redux-thunk#readme",
+  "dependencies": {
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "resource-store-redux": "0.1.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "@types/node": "^12.0.8",
+    "@types/react-redux": "^7.1.1",
+    "@types/webpack-merge": "^4.1.5",
+    "clean-webpack-plugin": "^1.0.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0",
+    "source-map-explorer": "^1.6.0",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "peerDependencies": {
+    "redux": "^4.0.1",
+    "resource-store-redux": "0.1.1"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx)?$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts}",
+      "!**/node_modules/**",
+      "!**/dist/**",
+      "!**/coverage/**",
+      "!**/webpack.*.ts",
+      "!**/*.eslintrc.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}
