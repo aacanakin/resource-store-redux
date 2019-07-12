@@ -1,41 +1,46 @@
-import { resourceActions, ResourceStoreOptions, reducer } from 'resource-store-redux';
-import { ThunkDispatch } from 'redux-thunk';
-import { AnyAction } from 'redux';
+import {
+	resourceActions,
+	ResourceStoreOptions,
+	reducer,
+	resourceStore
+} from "resource-store-redux";
+import { ThunkDispatch, ThunkAction } from "redux-thunk";
+import { AnyAction } from "redux";
+// import { AnyAction } from "redux";
 
-type ApiMap = { [key: string]: (params: any) => Promise<any> }
+export type ApiMap = { [key: string]: (params: any) => Promise<any> };
 
-export interface ResourceStoreThunkOptions extends ResourceStoreOptions {
-    map: ApiMap
+export interface ResourceStoreThunkOptions {
+	api: ApiMap;
 }
 
-export function resourceStore(options: ResourceStoreThunkOptions) {
+export function resourceStoreThunk(options: ResourceStoreThunkOptions) {
+	const { reducer } = resourceStore({ keys: Object.keys(options.api) });
 
-    const resourceReducer = reducer(Object.keys(options.map))
+	const requestResource = (
+		key: string,
+		params: any = {}
+	): ThunkAction<Promise<void>, {}, {}, AnyAction> => {
+		if (!options.api[key]) {
+			throw new Error(`Resource: "${key}" does not exist in your api map`);
+		}
 
-    const requestResource = async (key: string, params: any) => {
+		const promise = options.api[key];
 
-        if (!options.map[key]) {
-            throw new Error(`Resource: ${key} does not exist in your api map`)
-        }
+		return async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
+			dispatch(resourceActions.request(key, params));
 
-        const promise = options.map[key]
+			try {
+				const response = await promise(params);
+				dispatch(resourceActions.success(key, response));
+			} catch (e) {
+				dispatch(resourceActions.failure(key, e));
+			}
+		};
+	};
 
-        return async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
-            dispatch(resourceActions.request(key, params))
-
-            try {
-                const response = await promise(params)
-                dispatch(resourceActions.success(key, response))
-            } catch (e) {
-                dispatch(resourceActions.failure(key, e))
-                throw new Error(e)
-            }
-        }
-    }
-
-    return {
-        reducer: resourceReducer,
-        requestResource
-    }
+	return {
+		reducer,
+		requestResource
+	};
 }
-
