@@ -1,13 +1,13 @@
 {
-  "name": "root",
-  "private": true,
-  "devDependencies": {
-    "lerna": "^3.15.0"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "playground": "lerna run start --stream"
-  }
+	"name": "root",
+	"private": true,
+	"devDependencies": {
+		"lerna": "^3.15.0"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"playground": "lerna run start --stream"
+	}
 }
