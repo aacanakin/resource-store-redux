@@ -8,5 +8,5 @@ export enum Resource {
 
 export const api: ApiMap = {
 	[Resource.SampleGet]: () => axios.get("https://httpbin.org/get"),
-	[Resource.SamplePost]: () => axios.post("https://httpbin.org/post")
+	[Resource.SamplePost]: (body: any) => axios.post("https://httpbin.org/post", body)
 };
