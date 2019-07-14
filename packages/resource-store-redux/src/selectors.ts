@@ -1,4 +1,4 @@
-import { ResourceStoreState } from "./types";
+import { ResourceStoreState } from './types';
 
 export function getResource(state: ResourceStoreState, key: string) {
   return state[key];

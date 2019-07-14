@@ -1,4 +1,4 @@
-import { ResourceStoreState } from ".";
+import { ResourceStoreState } from '.';
 
 export function initialState(keys: string[]): ResourceStoreState {
   const state: ResourceStoreState = {};

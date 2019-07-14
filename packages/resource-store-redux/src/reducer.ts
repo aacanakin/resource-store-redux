@@ -1,12 +1,16 @@
+import { Reducer } from 'redux';
+import { ResourceActionTypes } from './constants';
+import { initialState } from './state';
+import { ResourceStoreState } from './types';
 
-import { Reducer } from "redux";
-import { ResourceActionTypes } from "./constants";
-import { initialState } from "./state";
-import { ResourceStoreState } from "./types";
-
-export function reducer(resourceKeys: string[]): Reducer<ResourceStoreState> {
-
-  return (state: ResourceStoreState = initialState(resourceKeys), action) => {
+export function resourceReducer(
+  resourceKeys: string[],
+): Reducer<ResourceStoreState> {
+  const initialResourceState = initialState(resourceKeys);
+  return (state: ResourceStoreState = initialResourceState, action) => {
+    if (!action || !action.payload) {
+      return state;
+    }
 
     const key = action.payload.key;
     if (state[key] === undefined) {

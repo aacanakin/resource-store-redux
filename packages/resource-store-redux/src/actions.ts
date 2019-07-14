@@ -1,5 +1,5 @@
-import { action } from "typesafe-actions";
-import { ResourceActionTypes } from "./constants";
+import { action } from 'typesafe-actions';
+import { ResourceActionTypes } from './constants';
 
 export const request = (key: string, params: any = undefined) => {
   return action(ResourceActionTypes.RESOURCE_REQUEST, {
