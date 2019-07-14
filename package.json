@@ -8,6 +8,8 @@
 		"packages/*"
 	],
 	"scripts": {
-		"playground": "lerna run start --stream"
+		"playground": "lerna run start --stream",
+		"test": "lerna run test --stream",
+		"test:coverage": "lerna run --stream test -- --coverage"
 	}
 }
