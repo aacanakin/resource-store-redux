@@ -8,7 +8,7 @@
 		"packages/*"
 	],
 	"scripts": {
-		"postinstall": "lerna bootstrap",
+		"postinstall": "lerna run build && lerna bootstrap",
 		"playground": "lerna run start --stream",
 		"clean": "lerna clean -y",
 		"bootstrap": "lerna bootstrap",
