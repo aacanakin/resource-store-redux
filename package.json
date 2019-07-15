@@ -8,10 +8,11 @@
 		"packages/*"
 	],
 	"scripts": {
+		"postinstall": "lerna bootstrap",
 		"playground": "lerna run start --stream",
 		"clean": "lerna clean -y",
 		"bootstrap": "lerna bootstrap",
 		"test": "lerna run test --stream",
-		"test:coverage": "lerna run --stream test -- --coverage"
+		"ci": "lerna run --stream test -- --coverage"
 	}
 }
