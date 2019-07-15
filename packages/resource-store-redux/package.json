@@ -28,7 +28,7 @@
     "typesafe-actions": "^3.0.0"
   },
   "peerDependencies": {
-    "redux": "^4.0.1"
+    "redux": "^4.0.3"
   },
   "devDependencies": {
     "@types/jest": "^23.3.12",

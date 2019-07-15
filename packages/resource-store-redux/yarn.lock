@@ -2,6 +2,8 @@
 # yarn lockfile v1
 
 
-resource-store-redux-thunk@0.2.1:
+resource-store-redux@0.2.1:
   version "0.2.1"
+  dependencies:
+    typesafe-actions "^3.0.0"
 

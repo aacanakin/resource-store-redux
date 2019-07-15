@@ -58,7 +58,7 @@
     "react-redux": "^7.1.0",
     "redux": "^4.0.3",
     "redux-thunk": "^2.3.0",
-    "resource-store-redux": "^0.1.4"
+    "resource-store-redux": "*"
   },
   "jest": {
     "roots": [
