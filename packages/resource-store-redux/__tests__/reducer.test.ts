@@ -6,6 +6,12 @@ describe('Reducer', () => {
   const key = 'testEndpointResource';
   const state = initialState([key]);
 
+  it('should return default state on non payload', () => {
+    const action = { type: '@@redux/INIT' };
+    const nextState = resourceReducer([key])(state, action);
+    expect(nextState).toEqual(state);
+  });
+
   it('should throw error on non-existing resource key', () => {
     const action = actions.request('non-existing-key');
     expect(() => resourceReducer([key])(state, action)).toThrow();
