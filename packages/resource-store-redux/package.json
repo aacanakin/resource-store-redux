@@ -1,6 +1,6 @@
 {
   "name": "resource-store-redux",
-  "version": "0.1.4",
+  "version": "0.2.1",
   "description": "Resource store for async resources",
   "main": "dist/index",
   "module": "dist/index",
