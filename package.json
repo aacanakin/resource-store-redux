@@ -13,6 +13,6 @@
 		"clean": "lerna clean -y",
 		"bootstrap": "lerna bootstrap",
 		"test": "lerna run test --stream",
-		"ci": "lerna run --stream test -- --coverage"
+		"ci": "lerna run test -- --coverage"
 	}
 }
