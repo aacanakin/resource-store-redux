@@ -44,7 +44,7 @@
     "redux": "^4.0.3",
     "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
-    "resource-store-redux": "^0.1.4",
+    "resource-store-redux": "*",
     "source-map-explorer": "^1.6.0",
     "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.3",

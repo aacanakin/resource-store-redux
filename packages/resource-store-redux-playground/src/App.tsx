@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
 import { Provider, connect } from "react-redux";
 import configureStore, { StoreState } from "./configureStore";
-import { getData } from "resource-store-redux";
+import { getData, hasError, getError } from "resource-store-redux";
 import { Resource } from "./Api";
 import { ThunkDispatch } from "redux-thunk";
 
@@ -57,10 +57,15 @@ interface FormContainerDispatchProps {
 	onSubmit: (form?: any) => void;
 }
 
-const mapStateToProps = (state: StoreState, ownProps: FormContainerOwnProps): FormContainerStateProps => ({
-	// JSON.stringify(obj, null, 2)
-	response: JSON.stringify(getData(state.resources, ownProps.resource), null, 2),
-})
+const mapStateToProps = (state: StoreState, ownProps: FormContainerOwnProps): FormContainerStateProps => {
+	const data = hasError(state.resources, ownProps.resource) ?
+		getError(state.resources, ownProps.resource):
+		getData(state.resources, ownProps.resource)
+
+	return {
+		response: JSON.stringify(data, null, 2),
+	}
+}
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<StoreState, any, any>, ownProps: FormContainerOwnProps): FormContainerDispatchProps => ({
 	onSubmit: (form: any) => {
@@ -79,11 +84,14 @@ const App: React.FC = () => {
 	return (
 		<Provider store={store}>
 			<Grid container direction="row" justify="center" alignItems="center">
-				<Grid item xs={4} className={classes.gridItem}>
+				<Grid item xs={6} className={classes.gridItem}>
 					<FormContainer resource={Resource.SampleGet} name="sample get" />
 				</Grid>
-				<Grid item xs={4} className={classes.gridItem}>
+				<Grid item xs={6} className={classes.gridItem}>
 					<FormContainer resource={Resource.SamplePost} name="sample post" />
+				</Grid>
+				<Grid item xs={6} className={classes.gridItem}>
+					<FormContainer resource={Resource.SampleFailure} name="sample failure" />
 				</Grid>
 			</Grid>
 		</Provider>
