@@ -1,12 +1,12 @@
 import { Reducer } from 'redux';
 import { ResourceActionTypes } from './constants';
-import { initialState } from './state';
+import { initialResourceStoreState } from './state';
 import { ResourceStoreState } from './types';
 
 export function resourceReducer(
   resourceKeys: string[],
 ): Reducer<ResourceStoreState> {
-  const initialResourceState = initialState(resourceKeys);
+  const initialResourceState = initialResourceStoreState(resourceKeys);
   return (state: ResourceStoreState = initialResourceState, action) => {
     if (!action || !action.payload) {
       return state;

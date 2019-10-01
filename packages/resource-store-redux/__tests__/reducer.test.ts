@@ -1,10 +1,10 @@
 import * as actions from '../src/actions';
 import { resourceReducer } from '../src/reducer';
-import { initialState } from '../src/state';
+import { initialResourceStoreState } from '../src/state';
 
 describe('Reducer', () => {
   const key = 'testEndpointResource';
-  const state = initialState([key]);
+  const state = initialResourceStoreState([key]);
 
   it('should return default state on non payload', () => {
     const action = { type: '@@redux/INIT' };
@@ -21,7 +21,7 @@ describe('Reducer', () => {
     const action = actions.cancel(key);
     const nextState = resourceReducer([key])(undefined, action);
 
-    expect(nextState).toEqual(initialState([key]));
+    expect(nextState).toEqual(initialResourceStoreState([key]));
   });
 
   it('should mutate state correctly in REQUEST action', () => {

@@ -1,5 +1,5 @@
 import { resourceStore } from '../src';
-import { initialState } from '../src/state';
+import { initialResourceStoreState } from '../src/state';
 
 describe('Resource Store', () => {
   it('should create reducer for keys', () => {
@@ -15,7 +15,7 @@ describe('Resource Store', () => {
       ResourceKeys.ListUsers,
     ];
 
-    const state = initialState(keys);
+    const state = initialResourceStoreState(keys);
     const store = resourceStore({ keys });
     const action = { type: 'UNIT', payload: { key: ResourceKeys.CreateUser } };
     const nextState = store.resourceReducer(state, action);
