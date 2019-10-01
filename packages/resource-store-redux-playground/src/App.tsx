@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
 import { Provider, connect } from "react-redux";
 import configureStore, { StoreState } from "./configureStore";
-import { getData, hasError, getError } from "resource-store-redux";
+import { resourceSelectors } from "resource-store-redux";
 import { Resource } from "./Api";
 import { ThunkDispatch } from "redux-thunk";
 
@@ -58,9 +58,9 @@ interface FormContainerDispatchProps {
 }
 
 const mapStateToProps = (state: StoreState, ownProps: FormContainerOwnProps): FormContainerStateProps => {
-	const data = hasError(state.resources, ownProps.resource) ?
-		getError(state.resources, ownProps.resource):
-		getData(state.resources, ownProps.resource)
+	const data = resourceSelectors.hasError(state.resources, ownProps.resource) ?
+		resourceSelectors.getError(state.resources, ownProps.resource) :
+		resourceSelectors.getData(state.resources, ownProps.resource)
 
 	return {
 		response: JSON.stringify(data, null, 2),

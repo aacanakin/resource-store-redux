@@ -1,10 +1,8 @@
-export {};
+import path from 'path';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import webpack from 'webpack';
 
-const path = require('path');
-
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-module.exports = {
+export const common: webpack.Configuration = {
   entry: './src/index.ts',
   module: {
     rules: [
@@ -25,6 +23,6 @@ module.exports = {
     libraryTarget: 'umd',
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
   ],
 };

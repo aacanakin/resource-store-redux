@@ -6,7 +6,7 @@ import {
 import { ResourceStoreState } from 'resource-store-redux';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import { resourceActions } from 'resource-store-redux/src';
+import { resourceActions } from 'resource-store-redux';
 
 enum Resources {
   ListUsers = 'listUsers',

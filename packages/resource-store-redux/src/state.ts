@@ -1,4 +1,4 @@
-import { ResourceStoreState } from '.';
+import { ResourceStoreState } from './types';
 
 export function initialResourceStoreState(keys: string[]): ResourceStoreState {
   const state: ResourceStoreState = {};

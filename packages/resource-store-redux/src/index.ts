@@ -1,16 +1,21 @@
 import * as resourceActions from './actions';
+import * as resourceSelectors from './selectors';
+import { Resource, ResourceStoreState, ResourceStoreOptions } from './types';
 import { resourceReducer } from './reducer';
-import { ResourceStoreOptions } from './types';
+import { initialResourceStoreState } from './state'
 
-export { resourceActions };
-export * from './constants';
-export * from './reducer';
-export * from './selectors';
-export * from './types';
-export * from './state';
-
-export function resourceStore(options: ResourceStoreOptions) {
+const resourceStore = (options: ResourceStoreOptions) => {
   return {
     resourceReducer: resourceReducer(options.keys),
   };
 }
+
+export {
+  resourceActions,
+  resourceSelectors,
+  resourceStore,
+  resourceReducer,
+  Resource,
+  ResourceStoreState,
+  initialResourceStoreState
+};
