@@ -24,11 +24,9 @@
   "bugs": {
     "url": "https://github.com/aacanakin/resource-store-redux/issues"
   },
-  "dependencies": {
-    "typesafe-actions": "^3.0.0"
-  },
   "peerDependencies": {
-    "redux": "^4.0.3"
+    "redux": "^4.0.3",
+    "typesafe-actions": "^3.0.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.12",
@@ -48,6 +46,7 @@
     "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.2.0",
+    "typesafe-actions": "^3.0.0",
     "typescript": "^3.2.2",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1",
