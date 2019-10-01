@@ -1,6 +1,6 @@
 {
   "name": "resource-store-redux-thunk",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "Thunk middleware for resource-store-redux to map actions with async resources",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
