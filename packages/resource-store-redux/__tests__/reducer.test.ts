@@ -12,9 +12,9 @@ describe('Reducer', () => {
     expect(nextState).toEqual(state);
   });
 
-  it('should throw error on non-existing resource key', () => {
+  it('should return state on non-existing resource key', () => {
     const action = actions.request('non-existing-key');
-    expect(() => resourceReducer([key])(state, action)).toThrow();
+    expect(resourceReducer([key])(state, action)).toEqual(state);
   });
 
   it('should return initial state when state is not defined', () => {

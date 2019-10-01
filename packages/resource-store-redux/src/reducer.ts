@@ -14,7 +14,7 @@ export function resourceReducer(
 
     const key = action.payload.key;
     if (state[key] === undefined) {
-      throw new Error(`Resource key "${key}" is undefined`);
+      return state;
     }
 
     switch (action.type) {
