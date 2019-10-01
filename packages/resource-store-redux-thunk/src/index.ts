@@ -2,8 +2,11 @@ import { resourceActions } from 'resource-store-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 
+type RequestParams = any;
+type Response = any;
+
 export interface ApiMap {
-  [key: string]: (params: any) => Promise<any>;
+  [key: string]: (params: RequestParams) => Promise<Response>;
 }
 
 export interface ResourceStoreThunkOptions {
@@ -11,11 +14,7 @@ export interface ResourceStoreThunkOptions {
 }
 
 export function resourceStoreThunk(options: ResourceStoreThunkOptions) {
-
-  const requestResource = (
-    key: string,
-    params: any = {},
-  ) => {
+  const requestResource = (key: string, params: RequestParams = {}) => {
     if (!options.api[key]) {
       throw new Error(`Resource: "${key}" does not exist in your api map`);
     }
