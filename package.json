@@ -9,6 +9,8 @@
 	],
 	"scripts": {
 		"postinstall": "lerna run build && lerna bootstrap",
+		"build": "lerna run build",
+		"publish": "lerna run build && lerna run publish",
 		"playground": "lerna run start --stream",
 		"clean": "lerna clean -y",
 		"bootstrap": "lerna bootstrap",
