@@ -8,6 +8,7 @@ import {
 
 describe('Selectors', () => {
   const key = 'sampleResource';
+  const invalidKey = 'nonExistingKey';
   const state = {
     [key]: {
       isBusy: false,
@@ -22,7 +23,7 @@ describe('Selectors', () => {
     });
 
     it('should return undefined with non existing key', () => {
-      expect(getResource(state, 'non-existing-key')).toBeUndefined();
+      expect(getResource(state, invalidKey)).toBeUndefined();
     });
   });
 
@@ -32,7 +33,7 @@ describe('Selectors', () => {
     });
 
     it('should return undefined with non existing key', () => {
-      expect(getData(state, 'non-existing-key')).toBeUndefined();
+      expect(getData(state, invalidKey)).toBeUndefined();
     });
   });
 
@@ -42,7 +43,7 @@ describe('Selectors', () => {
     });
 
     it('should return undefined with non existing key', () => {
-      expect(isBusy(state, 'non-existing-key')).toBeUndefined();
+      expect(isBusy(state, invalidKey)).toBeUndefined();
     });
   });
 
@@ -52,7 +53,7 @@ describe('Selectors', () => {
     });
 
     it('should return undefined with non existing key', () => {
-      expect(getError(state, 'non-existing-key')).toBeUndefined();
+      expect(getError(state, invalidKey)).toBeUndefined();
     });
   });
 
@@ -62,7 +63,7 @@ describe('Selectors', () => {
     });
 
     it('should return undefined with non existing key', () => {
-      expect(isBusy(state, 'non-existing-key')).toBeUndefined();
+      expect(isBusy(state, invalidKey)).toBeUndefined();
     });
   });
 });
