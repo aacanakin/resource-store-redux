@@ -9,17 +9,18 @@ import {
 describe('Selectors', () => {
   const key = 'sampleResource';
   const invalidKey = 'nonExistingKey';
+  const resource = {
+    isBusy: false,
+    data: { foo: { bar: 'baz' } },
+    error: new Error('Sample Error'),
+  };
   const state = {
-    [key]: {
-      isBusy: false,
-      data: { foo: { bar: 'baz' } },
-      error: new Error('Sample Error'),
-    },
+    [key]: resource,
   };
 
   describe('getResource', () => {
     it('should return resource with correct key', () => {
-      expect(getResource(state, key)).toEqual(state[key]);
+      expect(getResource(state, key)).toEqual(resource);
     });
 
     it('should return undefined with non existing key', () => {
@@ -29,7 +30,7 @@ describe('Selectors', () => {
 
   describe('getData', () => {
     it('should return data with correct key', () => {
-      expect(getData(state, key)).toEqual(state[key].data);
+      expect(getData(state, key)).toEqual(resource.data);
     });
 
     it('should return undefined with non existing key', () => {
@@ -39,7 +40,7 @@ describe('Selectors', () => {
 
   describe('isBusy', () => {
     it('should return isBusy with correct key', () => {
-      expect(isBusy(state, key)).toEqual(state[key].isBusy);
+      expect(isBusy(state, key)).toEqual(resource.isBusy);
     });
 
     it('should return undefined with non existing key', () => {
@@ -49,7 +50,7 @@ describe('Selectors', () => {
 
   describe('getError', () => {
     it('should return true with correct key with error', () => {
-      expect(getError(state, key)).toEqual(state[key].error);
+      expect(getError(state, key)).toEqual(resource.error);
     });
 
     it('should return undefined with non existing key', () => {
