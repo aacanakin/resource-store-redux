@@ -1,6 +1,6 @@
 {
 	"name": "resource-store-redux-playground",
-	"version": "0.1.0",
+	"version": "0.4.7",
 	"private": true,
 	"dependencies": {
 		"@material-ui/core": "^4.2.0",
@@ -13,8 +13,8 @@
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"react-scripts": "^3.1.2",
-		"resource-store-redux": "*",
-		"resource-store-redux-thunk": "*",
+		"resource-store-redux": "^0.4.7",
+		"resource-store-redux-thunk": "^0.4.7",
 		"typescript": "3.4.5"
 	},
 	"scripts": {
