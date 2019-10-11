@@ -17,7 +17,7 @@ describe('Actions', () => {
     });
 
     it('should generate REQUEST action with non-empty params', () => {
-      const params = { foo: 1, bar: { baz: 2 } };
+      const params = { param1: 'param1', param2: 1 };
       const requestAction = resourceActions.request(key, params);
       expect(requestAction).toEqual(
         action(ResourceActionTypes.RESOURCE_REQUEST, {
