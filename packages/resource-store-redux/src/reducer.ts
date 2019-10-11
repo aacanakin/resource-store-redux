@@ -7,15 +7,18 @@ export function resourceReducer(
   resourceKeys: string[],
 ): Reducer<ResourceStoreState> {
   const initialResourceState = initialResourceStoreState(resourceKeys);
+
   return (state: ResourceStoreState = initialResourceState, action) => {
-    if (!action || !action.payload) {
+    if (
+      !action ||
+      !action.payload ||
+      !action.payload.key ||
+      !state[action.payload.key]
+    ) {
       return state;
     }
 
-    const key = action.payload.key;
-    if (state[key] === undefined) {
-      return state;
-    }
+    const { key } = action.payload;
 
     switch (action.type) {
       case ResourceActionTypes.RESOURCE_REQUEST:
